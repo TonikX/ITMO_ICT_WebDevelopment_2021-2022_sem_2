@@ -1,0 +1,28 @@
+site_name: Hotel Documentation
+nav:
+  - Info: index.md
+  - Курсовой проект:
+      - Титульный лист: course_project/title.md
+      - Введение: course_project/intro.md
+      - Цели и задачи проекта: course_project/project.md
+      - Заключение: course_project/final.md
+  - API: endpoints.md
+  - Models: models.md
+  - Labs:  
+    - 1.1 Containerization: labs/lab1/1.1_containerization.md
+    - 1.2 Orchestration: labs/lab1/1.2_orchestration.md
+    - 2.1.1 Manual filters: labs/lab2/2.1.1_manual_filters.md
+    - 2.1.2 Auto filters: labs/lab2/2.1.2_auto_filters.md
+    - 2.2.1 Default Pagination: labs/lab2/2.2.1_default_pagination.md
+    - 2.2.2 Custom pagination: labs/lab2/2.2.2_custom_pagination.md
+    - 2.3.1 File upload & validation: labs/lab2/2.3.1_file_upload.md
+    - 2.4.1 Signals: labs/lab2/2.4.1_signals.md
+    - 3.1.1 Tests: labs/lab3/3.1.1_tests.md
+    - 4.1.1 Filters interface: labs/lab4/4.1.1_filters_interface.md
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    accent: light blue
+    primary: blue
