@@ -21,7 +21,7 @@
 <p style="text-align: right;">
 Выполнил <br>
 Лайок О.Л. <br>
-группа К33422
+группа К33421
 </p>
 
 <p style="text-align: right;">
