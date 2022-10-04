@@ -1,0 +1,41 @@
+site_name: Funny Farm
+nav:
+ - Home: index.md
+ - Api:
+     - Chicken:
+         - List of chickens: chicken/list.md
+         - Chicken's info: chicken/info.md
+         - Creating a chicken: chicken/create.md
+     - Breed:
+         - List of breeds: breed/list.md
+         - Breed's info: breed/info.md
+         - Creating a breed: breed/create.md
+     - Cage:
+         - List of cells: cage/list.md
+         - Cage's info: cage/info.md
+         - Creating a cage: cage/create.md
+     - User:
+         - List of users: user/list.md
+         - User's info: user/info.md
+     - Work:
+         - List of work: work/list.md
+         - Work's info: work/info.md
+         - Creating a work: work/create.md
+ - Labs:
+     - Lab 2:
+         - 2.1.1 Ручные фильтры: labs/lab2/211.md
+         - 2.1.2 Автоматические фильтры: labs/lab2/212.md
+         - 2.2.1 Пагинация: labs/lab2/221.md
+         - 2.2.2 Кастомная пагинация: labs/lab2/222.md
+         - 2.3.1 Загрузка и валидация файлов: labs/lab2/231.md
+         - 2.4.1 Сигналы: labs/lab2/241.md
+     - Lab 3:
+           - 3.1.1 Тесты на модель: labs/lab3/311.md
+           - 3.1.2 Тесты GET-запросов: labs/lab3/312.md
+           - 3.1.3 Тесты POST-запросов: labs/lab3/313.md
+           - 3.1.4 Тесты PATCH-запросов: labs/lab3/314.md
+     - Lab 4:
+         - 4.1 Адаптация интерфейсов vue.js: labs/lab4/41.md
+theme:
+ name: material
+
