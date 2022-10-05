@@ -825,35 +825,76 @@ Vary: Accept
 </code></pre>
 <h3 id="get-request">Get request</h3>
 <ul>
-<li><code>/hotel/guests/{pk}</code> - Получить информацию о конкретном госте</li>
-<li><code>/hotel/rooms/{pk}</code> - Получить информацию о конкретной комнате</li>
-<li><code>/hotel/staff/{pk}</code> - Получить информацию о конкретном члене персонала</li>
-<li><code>/hotel/cleaning/{pk}</code> - Получить информацию о конкретной уборке</li>
-<li><code>/hotel/cleaning</code> - Получить информацию о всех уборках</li>
-<li><code>/hotel/guests</code> - Получить информацию о всех гостях</li>
-<li><code>/hotel/rooms</code> - Получить информацию о всех комнатах</li>
-<li><code>/hotel/staff</code> - Получить информацию о всех членах персонала</li>
+<li><code>/admins</code> - Получить информацию о всех администраторах</li>
+<li>
+<p><code>/admins/{pk}</code> - Получить информацию о конкретном администраторе</p>
+</li>
+<li>
+<p><code>/guests</code> - Получить информацию о всех гостях</p>
+</li>
+<li><code>/guests/{pk}</code> - Получить информацию о конкретном госте</li>
+<li><code>/guests?check_in_date_after={check_in_date}&amp;check_in_date_before={check_in_date}</code> - Получить отфильтрованный список гостей в указанном диапазоне дат заезда</li>
+<li><code>/guests?check_out_date_after={check_out_date}&amp;check_out_date_before={check_out_date}</code> - Получить отфильтрованный список гостей в указанном диапазоне дат выезда</li>
+<li><code>/guests?search={name, passport_number}</code> - Найти гостя с указанным именем или номером паспорта</li>
+<li><code>/guests?ordering={check_in_date,check_out_date}</code> - Получить сортированный список гостей по дате заезда или дате выезда</li>
+<li>
+<p><code>/guests?page={page}</code> - Получить конкретную страницу списка гостей</p>
+</li>
+<li>
+<p><code>/rooms</code> - Получить информацию о всех комнатах</p>
+</li>
+<li><code>/rooms/{pk}</code> - Получить информацию о конкретной комнате</li>
+<li><code>rooms/type/&lt;int:type&gt;/</code> - Получить отфильтрованный список комнат по указанному типу</li>
+<li><code>rooms/floor/&lt;int:fl_g&gt;/&lt;int:fl_l&gt;/</code> - Получить отфильтрованный список комнат в находящихся межу указанными этажами</li>
+<li><code>rooms/floor-room-type/&lt;int:floor&gt;/&lt;int:type&gt;/</code> - Получить отфильтрованный список комнат с конкретным типом на конкретном этаже</li>
+<li><code>/rooms?price_min={price}&amp;price_max={price}</code> - Получить отфильтрованный список комнат в указанном диапазоне цен</li>
+<li><code>/rooms?number_min={number}&amp;number_max={number}</code> - Получить отфильтрованный список комнат в указанном диапазоне номеров</li>
+<li><code>/rooms?type={type}</code> - Получить отфильтрованный список комнат c указанным типом</li>
+<li><code>/rooms?search={number}</code> - Найти комнату с указанным номером</li>
+<li><code>/rooms?ordering={number,price}</code> - Получить сортированный список комнат по номеру или цене</li>
+<li>
+<p><code>/rooms?page={page}</code> - Получить конкретную страницу списка комнат</p>
+</li>
+<li>
+<p><code>/staff</code> - Получить информацию о всех членах персонала</p>
+</li>
+<li>
+<p><code>/staff/{pk}</code> - Получить информацию о конкретном члене персонала</p>
+</li>
+<li>
+<p><code>/cleaning</code> - Получить информацию о всех уборках</p>
+</li>
+<li><code>/cleaning/{pk}</code> - Получить информацию о конкретной уборке</li>
+<li><code>/cleaning?room_number={room__number}</code> - Получить отфильтрованный список уборок в указанной комнате</li>
+<li><code>/cleaning?staff_name={staff__name}</code> - Получить отфильтрованный список уборок сделаный указаным уборщиком</li>
+<li><code>/cleaning?search={date_time,room__number,staff__name}</code> - Найти уборку по указанной дате, номеру комнаты или имени уборщика</li>
+<li><code>/cleaning?ordering={date_time}</code> - Получить сортированный список уборок по дате уборки</li>
 </ul>
 <h3 id="post-request">Post request</h3>
 <ul>
-<li><code>/hotel/rooms</code> - Добавить номер</li>
-<li><code>/hotel/guests</code> - Добавить гостя</li>
-<li><code>/hotel/staff</code> - Добавить члена персонала</li>
-<li><code>/hotel/cleaning</code> - Добавить уборку</li>
+<li><code>/upload-room-picture</code> - Загрузить фотографию конкретной комнаты</li>
+<li><code>/upload-files</code> - Загрузить несколько фотографий комнат</li>
+<li><code>/admins</code> - Добавить администратора</li>
+<li><code>/rooms</code> - Добавить номер</li>
+<li><code>/guests</code> - Добавить гостя</li>
+<li><code>/staff</code> - Добавить члена персонала</li>
+<li><code>/cleaning</code> - Добавить уборку</li>
 </ul>
 <h3 id="putpatch-request">Put/Patch request</h3>
 <ul>
-<li><code>/hotel/guests/{pk}</code> - Изменить информацию о конкретном госте</li>
-<li><code>/hotel/rooms/{pk}</code> - Изменить информацию о конкретной комнате</li>
-<li><code>/hotel/staff/{pk}</code> - Изменить информацию о конкретном члене персонала</li>
-<li><code>/hotel/cleaning/{pk}</code> - Изменить информацию о конкретной уборке</li>
+<li><code>/admins/{pk}</code> - Изменить информацию о конкретном администраторе</li>
+<li><code>/guests/{pk}</code> - Изменить информацию о конкретном госте</li>
+<li><code>/rooms/{pk}</code> - Изменить информацию о конкретной комнате</li>
+<li><code>/staff/{pk}</code> - Изменить информацию о конкретном члене персонала</li>
+<li><code>/cleaning/{pk}</code> - Изменить информацию о конкретной уборке</li>
 </ul>
 <h3 id="delete-request">Delete request</h3>
 <ul>
-<li><code>/hotel/guests/{pk}</code> - Удалить информацию о конкретном госте</li>
-<li><code>/hotel/rooms/{pk}</code> - Удалить информацию о конкретной комнате</li>
-<li><code>/hotel/staff/{pk}</code> - Удалить информацию о конкретном члене персонала</li>
-<li><code>/hotel/cleaning/{pk}</code> - Удалить информацию о конкретной уборке</li>
+<li><code>/admins/{pk}</code> - Удалить информацию о конкретном администраторе</li>
+<li><code>/guests/{pk}</code> - Удалить информацию о конкретном госте</li>
+<li><code>/rooms/{pk}</code> - Удалить информацию о конкретной комнате</li>
+<li><code>/staff/{pk}</code> - Удалить информацию о конкретном члене персонала</li>
+<li><code>/cleaning/{pk}</code> - Удалить информацию о конкретной уборке</li>
 </ul>
 
 
