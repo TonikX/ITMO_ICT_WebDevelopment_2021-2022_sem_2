@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  back:
+    container_name: farm_back
+    build: ./my_funny_farm
+    command: bash -c "
+      python3 manage.py makemigrations
+      && python3 manage.py migrate
+      && python3 manage.py runserver 0.0.0.0:8000";
+    ports:
+      - '8000:8000'
+    depends_on:
+      - db
+
+  front:
+    container_name: farm_front
+    build: ./farm_front
+#    volumes:
+#      - ./farm_front:/farm_front
+#      - /farm_front/node_modules
+    ports:
+      - '8080:8080'
+    depends_on:
+      - back
+
+  db:
+    container_name: farm_db
+    image: postgres
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./dbs/postgres-data:/var/lib/postgresql
+
+  pgadmin:
+    container_name: pg_admin4
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: pgadmin@pgadmin.com
+      PGADMIN_DEFAULT_PASSWORD: pgadmin
+    ports:
+      - '5050:80'
+    depends_on:
+      - db
