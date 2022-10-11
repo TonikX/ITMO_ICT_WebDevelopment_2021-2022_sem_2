@@ -204,7 +204,7 @@ export default {
         if (response.status !== 200) {
           throw new Error(response.status)
         }
-        this.workgroups = response.data
+        this.workgroups = response.data.results
         return response.data
       } catch (e) {
         console.error('AN API ERROR', e)
@@ -218,7 +218,7 @@ export default {
         if (response.status !== 200) {
           throw new Error(response.status)
         }
-        this.executors = response.data.results
+        this.executors = response.data
         return response.data
       } catch (e) {
         console.error('AN API ERROR', e)
@@ -232,7 +232,7 @@ export default {
         if (response.status !== 200) {
           throw new Error(response.status)
         }
-        this.requests = response.data
+        this.requests = response.data.results
         return response.data
       } catch (e) {
         console.error('AN API ERROR', e)

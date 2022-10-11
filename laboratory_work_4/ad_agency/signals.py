@@ -22,5 +22,5 @@ def update_client(sender, instance, **kwargs):
 
 @receiver(pre_delete, sender=ServicesPL)
 def delete_service(sender, instance, **kwargs):
-    with open('deleted_services.txt', 'a') as f:
+    with open('deleted_services.txt', 'a', encoding='utf-8') as f:
         f.write(f'Услуга {instance.title} была удалена.')
